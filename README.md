@@ -1,7 +1,5 @@
 ## Bienvenid@s a Tu Cifrado César
 
-#### Es un progama simple para practicar Python, para principiantes.
-
 #### Un Cifrado César es una forma de codificar un texto mediante el método de sustitución.
 #### El programa será capaz de cifrar un texto utilizando un desplazamiento aleatorio. Dará como resultado el texto cifrado así como su clave para descifrarlo.
 
