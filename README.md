@@ -1,20 +1,64 @@
-### Bienvenid@s a Tu Cifrado César
+# Cifrado Cesar
 
-##### **Un Cifrado César es una forma de codificar un texto mediante el método de sustitución**
->[!NOTE]
->###### ✨El programa será capaz de cifrar un texto utilizando un desplazamiento aleatorio. Dará como resultado el texto cifrado así como su clave para descifrarlo. Si queremos descifrar, tan sólo tendremos que indicarle la clave (el desplazamiento) y nos descifrará el texto.
+Herramienta de linea de comandos para cifrar y descifrar texto utilizando el cifrado Cesar.
 
+El cifrado Cesar es un metodo de sustitucion simple en el que cada letra del texto original se desplaza un numero fijo de posiciones en el alfabeto. Los caracteres no alfabeticos (numeros, espacios, signos de puntuacion) se mantienen intactos.
 
-#### 📋 Qué he usado
+## Instalacion
 
-- 👨‍💻 Visual Studio Code
-- 📘 Libro "Curso Intensivo de Python" de Eric Matthes  
-- 📘 Libro "Git & GitHub desde cero" de Brais Moure
-- 🌐 [Documentación de Git](https://git-scm.com)
-- 🌐 [Documentación de GitHub](https://docs.github.com/es)
-- 🌐 [Documentación Markdown](https://markdown.es)
+```bash
+pip install .
+```
 
----
+Para modo editable (desarrollo):
 
-> [!TIP]
-> ###### Si consideras útil el repositorio, apóyalo haciendo "★ Star" ¡Gracias! 🚀
+```bash
+pip install -e .
+```
+
+## Uso
+
+### Modo interactivo
+
+Ejecuta el programa sin argumentos para usar el menu interactivo:
+
+```bash
+cifrado-cesar
+```
+
+### Modo CLI directo
+
+Cifrar con desplazamiento aleatorio:
+
+```bash
+cifrado-cesar encrypt "Hola Mundo"
+```
+
+Cifrar con desplazamiento especifico:
+
+```bash
+cifrado-cesar encrypt "Hola Mundo" --shift 3
+```
+
+Descifrar:
+
+```bash
+cifrado-cesar decrypt "Krod Pxqgr" --shift 3
+```
+
+Ejecutar como modulo de Python:
+
+```bash
+python -m cifrado_cesar
+```
+
+## Pruebas
+
+```bash
+pip install -e ".[dev]"
+pytest -v
+```
+
+## Licencia
+
+MIT
