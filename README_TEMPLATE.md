@@ -1,14 +1,72 @@
 <!--
-README Template
-Version: 1.0.0
+===============================================================================
+README TEMPLATE
+Version: 1.1.0
 
-This template defines the standard structure for project documentation.
+Purpose:
+Defines the standard structure and writing style for README.md files.
 
-Replace all placeholder sections with project-specific information.
-Remove sections that are not applicable.
+Last Updated:
+2026-06-27
+
+===============================================================================
+
+Generation Rules
+
+When generating this document:
+
+- Preserve the structure defined by this template.
+- Remove sections that are not applicable.
+- Do not invent project features.
+- Do not invent roadmap items.
+- Do not invent repository URLs.
+- Do not invent package publication status.
+- Use placeholders whenever information is unknown.
+- Only document implemented functionality.
+- Commands shown in this README must match the actual project.
+- Examples should be executable whenever possible.
+
+Writing Style
+
+- Keep descriptions concise.
+- Avoid marketing language.
+- Do not exaggerate project capabilities.
+- Prefer practical examples.
+- Keep sections focused.
+- Use Spanish for all documentation.
+- Keep a professional and consistent tone.
+
+Badges
+
+Always include badges when applicable.
+
+Preferred order:
+
+1. Python Version
+2. Project Type
+3. Testing
+4. Status
+5. License
+
+Only include badges that accurately represent the current project.
+
+===============================================================================
+
+Template History
+
+v1.1.0
+- Added generation rules.
+- Added writing style guidelines.
+- Added badge guidelines.
+- Added template metadata.
+
+v1.0.0
+- Initial README template.
+
+===============================================================================
 -->
 
-## Project Name
+# Project Name
 
 <p align="left">
   <!-- Project badges -->
@@ -16,55 +74,59 @@ Remove sections that are not applicable.
 
 Short description of the project.
 
-Explain what it does, who it is intended for and why it exists.
+Explain:
+
+- What it does.
+- Who it is intended for.
+- Why it exists.
 
 ---
 
-### Features
+## Features
 
-#### Core
+### Core
 
-- Feature 1
-- Feature 2
-- Feature 3
+- Feature
+- Feature
+- Feature
 
-#### Additional
+### Additional
 
-- Additional feature 1
-- Additional feature 2
+- Feature
+- Feature
 
 ---
 
-### Requirements
+## Requirements
 
 - Python x.x+
-- Other requirements if applicable
+- Additional requirements if applicable.
 
 ---
 
-### Installation
+## Installation
 
-#### Clone the repository
+### Clone the repository
 
 ```bash
-git clone https://github.com/username/project.git
-cd project
+git clone https://github.com/<username>/<repository>.git
+cd <repository>
 ```
 
-#### Create a virtual environment
+### Create a virtual environment
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-#### Install the project
+### Install the project
 
 ```bash
 pip install -e .
 ```
 
-Or, if applicable:
+Or:
 
 ```bash
 pip install .
@@ -72,25 +134,25 @@ pip install .
 
 ---
 
-### Usage
+## Usage
 
-#### Interactive mode
+### Interactive mode
 
 ```bash
 project-name
 ```
 
-#### Command-line mode
+### Command-line mode
 
 ```bash
 project-name --help
 ```
 
-Add additional examples if needed.
+Add additional examples when appropriate.
 
 ---
 
-### Project Structure
+## Project Structure
 
 ```text
 src/
@@ -100,11 +162,11 @@ CHANGELOG.md
 pyproject.toml
 ```
 
-Briefly describe the responsibility of the main directories or files.
+Briefly describe the purpose of the most important files and directories.
 
 ---
 
-### Running Tests
+## Running Tests
 
 ```bash
 pytest
@@ -112,31 +174,37 @@ pytest
 
 ---
 
-### Technologies
+## Technologies
+
+Only include technologies actually used by the project.
+
+Example:
 
 - Python
+- FastAPI
+- SQLAlchemy
+- PostgreSQL
 - pytest
 
-Add or remove technologies depending on the project.
+---
+
+## Roadmap
+
+Only include roadmap items explicitly defined for this project.
+
+Example:
+
+- [ ] Feature
+- [ ] Feature
 
 ---
 
-### Roadmap
-
-Planned improvements:
-
-- [ ] Feature
-- [ ] Feature
-- [ ] Feature
-
----
-
-### Contributing
+## Contributing
 
 Contributions, suggestions and improvements are welcome.
 
 ---
 
-### License
+## License
 
 This project is licensed under the MIT License.

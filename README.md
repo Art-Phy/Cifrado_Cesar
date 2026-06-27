@@ -1,64 +1,139 @@
-# Cifrado Cesar
+## Cifrado César
 
-Herramienta de linea de comandos para cifrar y descifrar texto utilizando el cifrado Cesar.
+<p align="left">
+  <!-- Project badges -->
+</p>
 
-El cifrado Cesar es un metodo de sustitucion simple en el que cada letra del texto original se desplaza un numero fijo de posiciones en el alfabeto. Los caracteres no alfabeticos (numeros, espacios, signos de puntuacion) se mantienen intactos.
+Herramienta CLI para cifrar y descifrar texto mediante el cifrado César. Está pensada para usuarios que necesitan una forma rápida de aplicar este cifrado desde la terminal, así como para quienes desean explorar una implementación limpia y bien documentada con fines educativos o de referencia.
 
-## Instalacion
+---
+
+### Características
+
+#### Principales
+
+- Cifrar y descifrar texto con el cifrado César
+- Modo interactivo al ejecutar el programa sin argumentos
+- Subcomandos `encrypt` y `decrypt` mediante `argparse`
+- Clave aleatoria automática cuando no se especifica
+- Soporte para mayúsculas y minúsculas; los caracteres no alfabéticos se conservan
+
+#### Adicionales
+
+- Arquitectura `src/` con separación entre la lógica de negocio y la interfaz de usuario
+- Suite de pruebas automatizadas con `pytest`
+- Punto de entrada de consola `cifrado-cesar`
+- Validación de entrada de usuario
+
+---
+
+### Requisitos
+
+- Python 3.12+
+
+---
+
+### Instalación
+
+#### Clonar el repositorio
 
 ```bash
-pip install .
+git clone https://github.com/usuario/proyecto.git
+cd proyecto
 ```
 
-Para modo editable (desarrollo):
+#### Crear un entorno virtual
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+#### Instalar el proyecto
 
 ```bash
 pip install -e .
 ```
 
-## Uso
+O bien:
 
-### Modo interactivo
+```bash
+pip install .
+```
 
-Ejecuta el programa sin argumentos para usar el menu interactivo:
+---
+
+### Uso
+
+#### Modo interactivo
 
 ```bash
 cifrado-cesar
 ```
 
-### Modo CLI directo
-
-Cifrar con desplazamiento aleatorio:
-
-```bash
-cifrado-cesar encrypt "Hola Mundo"
-```
-
-Cifrar con desplazamiento especifico:
+#### Modo línea de comandos
 
 ```bash
 cifrado-cesar encrypt "Hola Mundo" --shift 3
-```
-
-Descifrar:
-
-```bash
 cifrado-cesar decrypt "Krod Pxqgr" --shift 3
 ```
 
-Ejecutar como modulo de Python:
+---
 
-```bash
-python -m cifrado_cesar
+### Estructura del Proyecto
+
+```text
+src/
+└── cifrado_cesar/
+    ├── __init__.py
+    ├── core.py
+    └── cli.py
+tests/
+├── test_core.py
+README.md
+CHANGELOG.md
+pyproject.toml
+LICENSE.md
 ```
 
-## Pruebas
+- `core.py`: Contiene la lógica de cifrado y descifrado (`cifrar_cesar`, `descifrar_cesar`).
+- `cli.py`: Maneja la interfaz de línea de comandos, los subcomandos y el menú interactivo.
+- `tests/`: Pruebas unitarias para la lógica de cifrado.
+
+---
+
+### Ejecutar Tests
 
 ```bash
-pip install -e ".[dev]"
-pytest -v
+pytest
 ```
 
-## Licencia
+---
 
-MIT
+### Tecnologías
+
+- Python 3.12+ con tipado estático
+- argparse
+- pytest
+- hatchling
+
+---
+
+### Hoja de Ruta
+
+- [ ] Interfaz gráfica con `tkinter` o `customtkinter`
+- [ ] Modo archivo (cifrar y descifrar archivos completos)
+- [ ] Opción de salida en el menú interactivo
+- [ ] Evitar la salida automática después de cifrar o descifrar
+
+---
+
+### Contribuir
+
+Las contribuciones, sugerencias y mejoras son bienvenidas.
+
+---
+
+### Licencia
+
+Este proyecto está licenciado bajo la Licencia MIT.
