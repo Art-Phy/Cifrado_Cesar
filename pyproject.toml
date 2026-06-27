@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cifrado-cesar"
+version = "2.0.0"
+description = "CLI tool to encrypt and decrypt text using the Caesar cipher"
+readme = "README.md"
+license = { file = "LICENSE.md" }
+requires-python = ">=3.12"
+keywords = ["cipher", "caesar", "cli", "encryption"]
+
+[project.scripts]
+cifrado-cesar = "cifrado_cesar.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=8.4.2"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
