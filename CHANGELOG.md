@@ -1,41 +1,57 @@
-# 📜 CHANGELOG
-Todas las modificaciones importantes de este proyecto se documentarán en este archivo.
+## Changelog
 
-El formato sigue las convenciones de [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/)
-y este proyecto utiliza [Versionado Semántico](https://semver.org/lang/es/).
+All notable changes to this project will be documented in this file.
 
----
-
-## [v1.0.0] - 2025-10-26
-### ✨ Añadido
-- Funcionalidad principal del **Cifrado César**, permitiendo cifrar y descifrar texto.
-- Opción de generar automáticamente una **clave aleatoria** al cifrar.
-- Soporte para **mayúsculas y minúsculas**, manteniendo caracteres no alfabéticos intactos.
-- **Estructura modularizada** con funciones separadas (`cifrar_cesar`, `descifrar_cesar`, `mostrar_menu`).
-- Comentarios y **docstrings detallados** para facilitar el mantenimiento.
-- Archivo `requirements.txt` (sin dependencias externas).
-
-### 🔧 Mejorado
-- Reorganización completa del código en `maincc.py` para hacerlo más legible y escalable.
-- Validación de entradas de usuario (clave numérica y opciones del menú).
-- Implementación de estructura `if __name__ == "__main__":` para futuras integraciones (CLI o GUI).
-
-### 📂 Estructura actual del repositorio
-Cifrado_Cesar/
-├── LICENSE.md
-├── README.md
-├── CHANGELOG.md
-├── maincc.py
-├── requirements.txt
-└── cifrado_cesar.code-workspace
-
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
-## [Sin publicar]
-### 🚧 En desarrollo
-- Añadir pruebas unitarias automáticas (`pytest`).
-- Implementar interfaz gráfica (GUI) con `tkinter` o `customtkinter`.
-- Soporte para cifrado personalizado (clave manual y modo archivo).
-- Añadir una opción de "salir" en el menú actual en terminal.
-- Eliminar la salida automática después del cifrado o descifrado.
+### [2.0.0] - 2026-06-26
+
+#### Added
+
+- `src/` layout with clean separation between core logic and CLI.
+- `pyproject.toml` replacing `requirements.txt`.
+- CLI via `argparse` with `encrypt` and `decrypt` subcommands.
+- Interactive menu mode when no arguments are provided.
+- Automated test suite with `pytest`.
+- Console entry point `cifrado-cesar`.
+
+#### Changed
+
+- Moved core logic (`cifrar_cesar`, `descifrar_cesar`) to `src/cifrado_cesar/core.py`.
+- Moved CLI logic to `src/cifrado_cesar/cli.py`.
+- Rewrote README in Spanish with installation and usage examples.
+- Rewrote CHANGELOG in English following Keep a Changelog format.
+
+#### Removed
+
+- Removed `maincc.py` (replaced by `src/cifrado_cesar/` package).
+- Removed `requirements.txt` (replaced by `pyproject.toml`).
+
+---
+
+### [1.0.0] - 2025-10-26
+
+#### Added
+
+- Core Caesar cipher functionality: encrypt and decrypt text.
+- Automatic random key generation for encryption.
+- Support for uppercase and lowercase letters; non-alphabetic characters remain unchanged.
+- Modular structure with separate functions (`cifrar_cesar`, `descifrar_cesar`, `mostrar_menu`).
+- Detailed comments and docstrings to ease maintenance.
+- `requirements.txt` (no external dependencies).
+
+#### Changed
+
+- Reorganized all code into `maincc.py` for better readability and scalability.
+- Input validation for user entries (numeric key and menu options).
+- Added `if __name__ == "__main__":` guard for future integration (CLI or GUI).
+
+#### In progress
+
+- GUI interface with `tkinter` or `customtkinter`.
+- Support for custom encryption (manual key and file mode).
+- Add an "exit" option to the terminal menu.
+- Prevent automatic exit after encryption or decryption.
