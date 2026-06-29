@@ -1,35 +1,44 @@
 ## Cifrado César
 
 <p align="left">
-  <!-- Project badges -->
+  <img src="https://img.shields.io/badge/python-3.12+-blue.svg" />
+  <img src="https://img.shields.io/badge/CLI-Text%20Encryption-orange" />
+  <img src="https://img.shields.io/badge/Testing-pytest-green" />
+  <img src="https://img.shields.io/badge/Status-v2.0.0%20Stable-success" />
+  <img src="https://img.shields.io/badge/License-MIT-lightgrey" />
 </p>
 
-Herramienta CLI para cifrar y descifrar texto mediante el cifrado César. Está pensada para usuarios que necesitan una forma rápida de aplicar este cifrado desde la terminal, así como para quienes desean explorar una implementación limpia y bien documentada con fines educativos o de referencia.
+Herramienta **CLI desarrollada en Python** para cifrar y descifrar texto utilizando el clásico **cifrado César**.
+
+El proyecto ha sido completamente refactorizado siguiendo una arquitectura moderna basada en `src/`, incorporando una interfaz de línea de comandos mediante `argparse`, un modo interactivo, tests automatizados y empaquetado con `pyproject.toml`.
+
+Ideal como proyecto educativo para comprender tanto el algoritmo César como una estructura profesional de proyectos Python.
 
 ---
 
-### Características
+### Funcionalidades
 
-#### Principales
+#### Core
 
-- Cifrar y descifrar texto con el cifrado César
-- Modo interactivo al ejecutar el programa sin argumentos
-- Subcomandos `encrypt` y `decrypt` mediante `argparse`
-- Clave aleatoria automática cuando no se especifica
-- Soporte para mayúsculas y minúsculas; los caracteres no alfabéticos se conservan
+- Cifrado de texto mediante el algoritmo César.
+- Descifrado de texto utilizando un desplazamiento determinado.
+- Generación automática de una clave aleatoria cuando no se especifica.
+- Conservación de mayúsculas, minúsculas y caracteres no alfabéticos.
+- Modo interactivo y modo no interactivo mediante `argparse`.
 
-#### Adicionales
+#### Proyecto
 
-- Arquitectura `src/` con separación entre la lógica de negocio y la interfaz de usuario
-- Suite de pruebas automatizadas con `pytest`
-- Punto de entrada de consola `cifrado-cesar`
-- Validación de entrada de usuario
+- Arquitectura moderna basada en `src/`.
+- Separación entre lógica de negocio e interfaz CLI.
+- Empaquetado mediante `pyproject.toml`.
+- Comando instalable `cifrado-cesar`.
+- Tests automatizados con `pytest`.
 
 ---
 
 ### Requisitos
 
-- Python 3.12+
+- Python 3.12 o superior.
 
 ---
 
@@ -38,8 +47,8 @@ Herramienta CLI para cifrar y descifrar texto mediante el cifrado César. Está 
 #### Clonar el repositorio
 
 ```bash
-git clone https://github.com/usuario/proyecto.git
-cd proyecto
+git clone https://github.com/ArtPphy/Cifrado_Cesar.git
+cd Cifrado_Cesar
 ```
 
 #### Crear un entorno virtual
@@ -55,12 +64,6 @@ source .venv/bin/activate
 pip install -e .
 ```
 
-O bien:
-
-```bash
-pip install .
-```
-
 ---
 
 ### Uso
@@ -71,38 +74,64 @@ pip install .
 cifrado-cesar
 ```
 
+Ejecuta la aplicación sin argumentos para acceder al menú interactivo.
+
 #### Modo línea de comandos
+
+##### Cifrar texto
 
 ```bash
 cifrado-cesar encrypt "Hola Mundo" --shift 3
+```
+
+##### Cifrar utilizando una clave aleatoria
+
+```bash
+cifrado-cesar encrypt "Hola Mundo"
+```
+
+##### Descifrar texto
+
+```bash
 cifrado-cesar decrypt "Krod Pxqgr" --shift 3
+```
+
+#### Ayuda
+
+```bash
+cifrado-cesar --help
 ```
 
 ---
 
-### Estructura del Proyecto
+### Estructura del proyecto
 
 ```text
 src/
 └── cifrado_cesar/
     ├── __init__.py
-    ├── core.py
-    └── cli.py
+    ├── __main__.py
+    ├── cli.py
+    └── core.py
+
 tests/
-├── test_core.py
+└── test_core.py
+
 README.md
 CHANGELOG.md
 pyproject.toml
-LICENSE.md
+LICENSE
 ```
 
-- `core.py`: Contiene la lógica de cifrado y descifrado (`cifrar_cesar`, `descifrar_cesar`).
-- `cli.py`: Maneja la interfaz de línea de comandos, los subcomandos y el menú interactivo.
-- `tests/`: Pruebas unitarias para la lógica de cifrado.
+| Archivo / Directorio | Descripción |
+|----------------------|-------------|
+| `core.py` | Implementa la lógica del cifrado y descifrado. |
+| `cli.py` | Gestiona la interfaz interactiva y los argumentos de línea de comandos. |
+| `tests/` | Contiene la suite de pruebas automatizadas. |
 
 ---
 
-### Ejecutar Tests
+### Ejecutar los tests
 
 ```bash
 pytest
@@ -112,28 +141,23 @@ pytest
 
 ### Tecnologías
 
-- Python 3.12+ con tipado estático
+- Python
 - argparse
 - pytest
 - hatchling
 
 ---
 
-### Hoja de Ruta
+### Roadmap
 
-- [ ] Interfaz gráfica con `tkinter` o `customtkinter`
-- [ ] Modo archivo (cifrar y descifrar archivos completos)
-- [ ] Opción de salida en el menú interactivo
-- [ ] Evitar la salida automática después de cifrar o descifrar
+Mejoras previstas para futuras versiones:
 
----
-
-### Contribuir
-
-Las contribuciones, sugerencias y mejoras son bienvenidas.
+- [ ] Soporte para cifrado y descifrado de archivos.
+- [ ] Posibilidad de utilizar alfabetos personalizados.
+- [ ] Mejoras adicionales en la experiencia del modo interactivo.
 
 ---
 
 ### Licencia
 
-Este proyecto está licenciado bajo la Licencia MIT.
+Este proyecto está licenciado bajo la licencia MIT.
